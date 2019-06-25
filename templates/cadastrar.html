@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Só jeuss meu css armaria-->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <form action="/register" method="post">
+
+            <h3> Por favor, preencha os campos para efetuar o cadastro.</h3>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Email</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Email" aria-label="Email"
+                    aria-describedby="basic-addon1" name="email">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Senha</span>
+                </div>
+                <input type="password" class="form-control" placeholder="Senha" aria-label="Senha"
+                    aria-describedby="basic-addon1" name="senha">
+            </div>
+
+            <input class="btn btn-primary" type="submit" value="Entrar" style="margin-bottom: 20px">
+
+            {% if s %}
+            <div class="alert alert-danger" role="alert">
+                {{s}}
+            </div>
+            {% endif %}
+            {% if f %}
+            <div class="alert alert-success" role="alert">
+                {{f}}
+                {{verified}}
+            </div>
+            {% endif %}
+
+        </form>
+    </div>
+    <button type="button" class="btn btn-warning" style="margin-inline-start: 127px"
+        onclick="redirect()">Voltar</button>
+
+</body>
+
+</html>
+
+<!-- Scripts -->
+<script>
+    function redirect() {
+        window.location.href = "http://127.0.0.1:5000/autentication";
+        window.location.assign("http://127.0.0.1:5000/autentication");
+    }
+</script>
