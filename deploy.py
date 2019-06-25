@@ -159,6 +159,10 @@ def predict():
     
     return render_template('layoutPredict.html', e=value)
 
+@app.route('/overview/mode', methods=['POST'])
+def mode():
+    return  render_template('layoutPredict.html', f='Modo de Operação Alterado')
+
 
 @app.route('/rules', methods=['GET'])
 def rules():

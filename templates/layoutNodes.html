@@ -84,38 +84,55 @@
         </div>
     </div>-->
 
-    <div class="divContent">
-        <div class="divInfoContent">
-            <form action="/overview" , method="POST">
-                <div class="form-group">
+    <div class="container">
+        <div class="row-6">
+            <div class="col-sm">
+                <form action="/overview" , method="POST">
+                    <div class="form-group">
 
-                    <label for="firebaseurl">Firebase Url</label>
-                    <input class="form-control" id="firebaseurl" name="firebaseurl" aria-describedby="emailHelp"
-                        placeholder="Enter Url" required="true">
+                        <label for="firebaseurl">Firebase Url</label>
+                        <input class="form-control" id="firebaseurl" name="firebaseurl" aria-describedby="emailHelp"
+                            placeholder="Enter Url" required="true">
 
-                    <label for="idesp">Identificação do Dispositivo</label>
-                    <input class="form-control" id="idesp" name="idesp" aria-describedby="emailHelp"
-                        placeholder="Exemplo: temperatura" required="true">
+                        <label for="idesp">Identificação do Dispositivo</label>
+                        <input class="form-control" id="idesp" name="idesp" aria-describedby="emailHelp"
+                            placeholder="Exemplo: temperatura" required="true">
 
-                    <label for="atributoalvo">Atributo Alvo</label>
-                    <input class="form-control" id="atributoalvo" name="atributoalvo" aria-describedby="emailHelp"
-                        placeholder="Exemplo: temperatura" required="true">
+                        <label for="atributoalvo">Atributo Alvo</label>
+                        <input class="form-control" id="atributoalvo" name="atributoalvo" aria-describedby="emailHelp"
+                            placeholder="Exemplo: temperatura" required="true">
 
-                    <label for="independentVariables">Variáveis Independentes</label>
-                    <input class="form-control" id="independentVariables" name="independentVariables"
-                        placeholder="Exemplo: umidade, PH" required="true">
+                        <label for="independentVariables">Variáveis Independentes</label>
+                        <input class="form-control" id="independentVariables" name="independentVariables"
+                            placeholder="Exemplo: umidade, PH" required="true">
 
-                </div>
-                <label for="item"> Select algorithm </label> <br>
-                <select name="item" id="item" style="width: 100%; margin-bottom: 10px">
-                    <option> Linear Regression </option>
-                    <option> SVR </option>
-                    <option> Neural Network </option>
-                </select>
-                <button type="submit" class="btn btn-warning" style="width: 100%">Training</button>
-            </form>
+                    </div>
+                    <label for="item"> Selecionar Algoritmo </label> <br>
+                    <select name="item" id="item" style="width: 100%; margin-bottom: 10px">
+                        <option> Regressão Linear </option>
+                        <option> SVM (Máquina de Vetores de Suporte) </option>
+                        <option> Rede Neural </option>
+                    </select>
+                    <button type="submit" class="btn btn-warning" style="width: 100%">Training</button>
+                </form>
+            </div>
         </div>
     </div>
+
+    {% if u %}
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+            <strong class="mr-auto">Modo de Operação</strong>
+            <small class="text-muted">Agora</small>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="toast-body">
+            {{u}}
+        </div>
+    </div>
+    {% endif %}
 </body>
 
 </html>
